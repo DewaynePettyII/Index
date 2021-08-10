@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JQuery API</title>
     <script
-      src=“https://code.jquery.com/jquery-3.6.0.min.js”
-      integrity=“sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=”
-      crossorigin=“anonymous”
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
     ></script>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        $(document).ready{
-          $(function() {
-            // Do stuff to the DOM
-            $('body').append('<p>Hello World!</p>');
-          });
-        }
+      $(document).ready(function(){
+          $.post("https://reqres.in/api/users",
+          {"name": "morpheus", "job": "leader"},
+           function(data, status){
+               $("p").append("status: " + status + ", data: " + data)
+           })
+      })
     </script>
-</body>
+    <p></p>
+  </body>
 </html>
