@@ -17,10 +17,44 @@
           $.post("https://reqres.in/api/users",
           {"name": "morpheus", "job": "leader"},
            function(data, status){
-               $("p").append("status: " + status + ", data: " + data)
+               $("#post").append("status: " + status + ", data: " + JSON.stringify(data))
            })
-      })
+           //syntax: $.get(url, data, function(data, status, xhr), datatype)
+           $.get("https://reqres.in/api/users/2", function(data, status){
+               $("#get").append("status: " + status + ", data: " + JSON.stringify(data.data)) // data.data: used for getting only the data. 
+           })
+        //    $.ajax({
+        //        url: "https://reqres.in/api/users/2",
+        //        type: "PUT",
+        //        //contentType: "application/json",
+        //        //crossDomain: true, 
+        //        dataType: 'jsonp',
+        //        //headers: {  'Access-Control-Allow-Origin': 'localhost' },
+        //        data: {
+        //         "name": "morpheus",
+        //         "job": "zion resident",
+        //        },
+        //        success: function(response, textStatus, xhr){
+        //            $("#put").append("status: " + xhr.status + ", data: " + JSON.stringify(response))
+        //        }
+        //    })
+        $.ajax({
+            url: "https://reqres.in/api/users/2",
+            contentType: "application/json",
+            type: "DELETE",
+            success: function(response, textStatus, xhr){
+                  $("#delete").append("status: " + xhr.status + ", user has been deleted successfully " )
+            }
+        })
+    })
     </script>
-    <p></p>
+    <h1>POST</h1>
+    <p id="post"></p>
+    <h1>GET</h1>
+    <p id="get"></p>
+    <h1>PUT</h1>
+    <p id="put"></p>
+    <h1>DELETE</h1>
+    <p id="delete"></p>
   </body>
 </html>
