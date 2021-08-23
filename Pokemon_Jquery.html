@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://pokeapi.co/api/v2/pokemon/1 ">
+    <title>Pichu</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">PICHU</h1>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-warning" id="getType">The Tiny Mouse Pokemon</button>
+        </div>
+        <hr>
+        <div id="output"></div>
+    
+    <script>  
+        $(document).ready(function(){
+            document.getElementById("getType").addEventListener('click', getPichu)
+                function getPichu(){
+                    $.get({
+                        type: 'GET',
+                        url: "https://pokeapi.co/api/v2/type/13/", 
+                        success: function(data, status){
+                            $("#output").append("status: " + status + ", data: " + JSON.stringify(data));
+                        }    
+                });
+            }
+        });
+    </script>
+</body>
+</html>

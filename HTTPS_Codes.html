@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>HTTPS Codes</title>
+</head>
+<body>
+    <h1 class="list-group-item list-group-item-success">Success Codes</h1>
+    <p>CODE 200 (The OK Code): the request has succeeded. The meaning of the success relies on the HTTP Method.</p>
+    <p>CODE 201 (Created): the request has succeeded in a new resource has been created as a result. This is
+        typically the response sent after a post requests, or some put requests.</p>
+    <p>CODE 202: the request has been receieved, but not yet acted upon. It is noncommittal,
+        since there is no way in HTTP to later send and asyncronized response indicated the outcome of the request.
+        It is intended for cases where another process or server handles the request, or for the badge processing.</p>
+    <p>CODE 203 (Non-Authoritative Information):The request had been successful, however, there has been a modification within the enclosed payload. </p>
+    <p>CODE 204 (No Content) The request had been successful and the client does not need to leave the current page or be replaced by it. For example, the “save and continue editing” functionality.</p>
+    <br>
+    <br>
+    <h1 class="list-group-item list-group-item-warning">Client Error Codes</h1>
+    <P>CODE 400 (Bad Request): the server should not understand the request do to invalid syntax.</P>
+    <P>CODE 401 (Unauthorized): the HTTP status specifies unautherized, semanitcally this response means unauthenticated.
+        That is, the client must authenticate itself to the request response.</P>
+    <P>CODE 402 (Payment Required): this response code is reserved for future use. The initial aim for creating 
+        this code was for using it for digital payment systems, however, this status code is used very rarely and no standard convetion
+        exists.</P>
+    <P>CODE 403 (Forbidden): the client does not access rights to the content. That is, it is unautherized, so that
+        the server is refusing to give the requested resourse. Unlike 401, the client's identity is known to the server.</P>
+    <P>CODE 404 (Not Found): the server cannot find the requested resource.</P>
+    <br>
+    <br>
+    <h1 class="list-group-item list-group-item-danger">Server Error Codes</h1>
+    <p>CODE 500 (Internal Server Error): the server has encountered a situation it doesn't know how to handle.</p>
+    <p>CODE 501 (Not Implimented): the requsested method is not supported by the serverand cannot be handled.</p>
+    <p>CODE 502 (Bad Gateway): this error response means that the server, while working as a gateway to get a response needed
+        to handle the response, got an invaled response.</p>
+    <p>CODE 503 (Service Unavailable): the server is not ready to handle the request. Common cause are a server that is down
+        for maintainance or that it is overloaded.</p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://pokeapi.co/api/v2/pokemon/1 ">
+    <title>Pokemon</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">LUCARIO</h1>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-info" id="getType">The Aura Pokemon</button>
+        </div>
+        <hr>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById("getType").addEventListener('click', getPosts);
+        async function getPosts(url){
+        const response = await fetch(url, {
+        method: "GET",
+        headers: {"Content-Type": "application/json"},
+        mode: "cors",
+    });
+    return response.json()    
+}
+function get(){
+    getData("https://pokeapi.co/api/v2/type/2/").then(data => {
+    console.log(data);
+});
+}
+    </script>
+<hr>
+<div class="container">
+    <h1 class="text-center">PICHU</h1>
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-warning" id="getType">The Tiny Mouse Pokemon</button>
+    </div>
+    <hr>
+    <div id="output"></div>
+
+<script>
+    $(document).ready(function(){
+        $.get("https://pokeapi.co/api/v2/type/13/", function(data, status){
+               $("#get").append("status: " + status + ", data: " + JSON.stringify(data.data))
+    })
+</script>
+<p id="get"></p>
+</body>
+</html>

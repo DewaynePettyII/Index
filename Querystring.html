@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Parameters: when using an API, the first thing to always do is read the documentation. Doing so
+    will prevent bugs down the line and undertsanding how to use built in parameters will only
+    make your life easier, espcially when dealing with large databases. There are several types of
+    parameters. Header Parameters and Path Parameters. -->
+
+    <!-- Path Parameters are within the path of the endpoint. The endpoint is where teh API accesses the information
+    it needs to response. Typically, path parameters are seperated by a "/". An example of this is a following request
+    to the Star Wars API.
+    HTTPS://swapi.dev/api/people/1 -->
+
+    <!-- Had the one not been added to the endpoint, "/people" will have returned all people or characters within the
+    Star Wars Universe. -->
+
+    <!-- Querystring parameters appear after a "?" in the endpoint. The "?" is followed by the parameters and their 
+    values, which is commonly refered to as the Querystring. When used properly, this provides the easiest
+    way to add basic filtering to restful APIs. -->
+
+    <!-- How to add Querystring parameters: to add Querystring parameters, a "?" is added to the endpoint, after
+    the base URL, and the path parameters if any. Following the "?" are the Querystrings which specify specific parameters
+    and values. -->
+
+    <!-- For Example: HTTP://exampleapi.com/{path-parameter}?parameter=value the parameters can be chained on, one
+    right after the other with an "&", seperating them. The specific order of the parameters do not matter.  -->
+
+    <!-- Querystrings very among APIs with large API databases, querystring parameters include limit, offset, and page.
+    Limit provides the number of resorces / instances you want to return, while offset dictates where to start the 
+    count from. They're often used in conjunction with each other as the following example. -->
+
+    <!-- HTTPS://pokeapi.co/api/v2/pokemon/?limit=7&offset=24 . This is asking the pokemon API to send back 7 pokemon 
+    instances, beginning at number 25. -->
+
+    <!-- The page is similar to limit and offset except that there is already a built in limit on how
+    many instances are rendered and the developer just needs a page parameter to access the next/preview
+    set of data. The following example from the Rick and Morty API, has a built in limit which shows 20
+    characters per page. -->
+
+    <!-- HTTPS://rickandmortyapi.com/api/character/?page=2 -->

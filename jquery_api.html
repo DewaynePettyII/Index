@@ -23,21 +23,17 @@
            $.get("https://reqres.in/api/users/2", function(data, status){
                $("#get").append("status: " + status + ", data: " + JSON.stringify(data.data)) // data.data: used for getting only the data. 
            })
-        //    $.ajax({
-        //        url: "https://reqres.in/api/users/2",
-        //        type: "PUT",
-        //        //contentType: "application/json",
-        //        //crossDomain: true, 
-        //        dataType: 'jsonp',
-        //        //headers: {  'Access-Control-Allow-Origin': 'localhost' },
-        //        data: {
-        //         "name": "morpheus",
-        //         "job": "zion resident",
-        //        },
-        //        success: function(response, textStatus, xhr){
-        //            $("#put").append("status: " + xhr.status + ", data: " + JSON.stringify(response))
-        //        }
-        //    })
+           $.ajax({
+               url: "https://reqres.in/api/users/2",
+               type: "PUT",
+               data: {
+                "name": "morpheus",
+                "job": "zion resident",
+               },
+               success: function(response, textStatus, xhr){
+                   $("#put").append("status: " + xhr.status + ", data: " + JSON.stringify(response))
+               }
+           })
         $.ajax({
             url: "https://reqres.in/api/users/2",
             contentType: "application/json",

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <title>API Key</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Fetch API</h1>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-success" id="getPosts">GET User Using API Key</button>
+        </div>
+        <hr>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById("getPosts").addEventListener('click', getPosts);
+        function getPosts(){
+            fetch('https://api.getpostman.com/me', {
+                headers: {"X-API-KEY": "PMAK-611bc56aa876970047136f1a-bf2613b5c563da85067b928e40d67bb6a3"}
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                let outPut = "<h2 class='mb-4'>user fullname</h2>";
+                outPut += `<p>${data.user.fullame}</p>`
+                document.getElementById('output').innerHTML = outPut;
+            });
+        }
+    </script>    
+</body>
+</html>
